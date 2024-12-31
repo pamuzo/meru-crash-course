@@ -5,6 +5,7 @@ import { connectDB } from "./config/db.js";
 import routerProduct from "./router/productRouter.js";
 
 dotenv.config();
+connectDB();
 const port = process.env.PORT || 5000;
 const app = express();
 
@@ -21,6 +22,5 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.listen(port, () => {
-  connectDB();
   console.log(`server is running on port ${port} `);
 });
